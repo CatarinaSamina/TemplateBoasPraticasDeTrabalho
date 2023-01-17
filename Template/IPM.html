@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Início de Sessão > </title>
+</head>
+<body>
+    <style>
+        .titulo{
+            font-family: sans-serif;
+            font-size: 30px;
+            color:#084B8A;
+            position: fixed;
+            top:20%;
+            right: 15%;
+            left: 15%;
+        }
+        .body{
+            font-family: sans-serif;
+            font-size: 25px;
+            color: #0B4C5F;
+        }
+        .texto{
+            width:350px;
+            height:40px;
+            border-radius:10px;
+            font-family: sans-serif;
+            font-size:20px;
+        }
+        .button{
+            border:1px;
+            border-radius:10px;
+            cursor:pointer;
+            font-family:sans-serif;
+            font-weight:bold;
+            font-size:13px;
+            color:white;
+            background-color: #084B8A;
+            padding:6px 10px;
+            width: 100px;
+            height:40px;
+        }
+        .button_right{
+            position:fixed;
+            right:0;
+            top:0;
+        }
+        .button_left{
+            position:fixed;
+            right:0;
+            bottom:0; 
+        }
+        .button_entrar{
+              border:1px;
+            border-radius:10px;
+            cursor:pointer;
+            font-family:sans-serif;
+            font-weight:bold;
+            font-size:13px;
+            color:white;
+            background-color: #084B8A;
+            padding:6px 10px;
+            width: 350px;
+            height:40px;
+        }
+        .centralizar{
+            position:fixed;
+            right:25%;
+            top: 35%;
+            left:25%;
+        }
+    </style>
+    
+    
+    <div class="button_right">
+    <button class="button" >Idioma</button>
+    </div>
+    
+    <div class="button_left">
+    <button class="button">Ajuda</button>
+    </div>
+    
+    <center>
+    <div class="titulo"><h1>Início de Sessão</h1></div>
+    <div class="centralizar">
+    <p>
+    <div class="body">
+        
+    <table cellspacing=10>
+        <tr>
+            <td><center>Username</center></td>
+        </tr>
+        <tr>
+            <td><input class="texto"type="text"></td>
+        </tr>
+            <td></td>
+        <tr>
+        </tr>
+        <tr>
+            <td><center>Password</center></td>
+        </tr>
+        <tr>
+            <td><input class="texto" type="password"></td>
+        </tr>
+        <tr>
+            <td><button class="button_entrar"> Entrar </button></td>
+        </tr>
+    </table>
+    </div>
+        
+        <a onclick="alert('Os seus dados foram enviados para o seu email')" class="bottom"><font color="#0B2161">Esqueceu-se dos seus dados?</font></a>
+    </p>
+    </div>
+    </center>
+    
+</body>
+</html>

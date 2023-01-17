@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title> Calendário > </title>
+</head>
+<body>
+<style>
+    
+    .wrapper {
+  display: grid;
+  grid-template-rows: 0px 1fr 70px;
+  grid-template-columns: 1fr;
+  grid-template-areas: "sidebar"
+                       "content";
+  width: 100vw; /* unnecessary, but let's keep things consistent */
+  height: 100vh;
+}
+
+@media screen and (min-width: 850px) {
+  .wrapper {
+    grid-template-columns: 200px 5fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "sidebar content";
+  }
+}
+
+
+
+/* SIDEBAR */
+
+main {
+  grid-area: content;
+  padding: 48px;
+}
+
+sidebar {
+  grid-area: sidebar;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: 3fr 1fr;
+  grid-template-areas: "logo menu avatar"
+                       "copyright menu avatar";
+}
+
+
+
+.toolbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.calendar{}
+
+.calendar__week,
+.calendar__header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);  
+}
+.calendar__week {
+  grid-auto-rows: 100px;
+  text-align: right;
+}
+
+.calendar__header {
+  grid-auto-rows: 50px;
+  align-items: center;
+  text-align: center;
+}
+
+.calendar__day {
+  padding: 16px;
+}
+
+
+
+
+/* COSMETIC STYLING */
+
+:root {
+  --red: #ED5454;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 100;
+  color: #A8B2B9;
+}
+
+sidebar {
+  background-color: white;
+  box-shadow: 5px 0px 20px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  background-color: #FCFBFC;
+}
+
+.avatar__name {
+  font-size: 0.8rem;
+}
+
+.menu__item {
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 16px 16px 16px 14px;
+  border-left: 4px solid transparent;
+  color: inherit;
+  text-decoration: none;
+  transition: color ease 0.3s;
+}
+
+.menu__item--active .menu__icon {
+  color: var(--red);
+}
+.menu__item--active .menu__text {
+  color: black;
+}
+
+.menu__item:hover {
+  color: black;
+}
+
+
+.menu__icon {
+  font-size: 1.3rem;
+}
+
+@media screen and (min-width: 850px) {
+  .menu__icon {
+    font-size: 0.9rem;
+    padding-right: 16px;
+  }
+  .menu__item--active {
+    border-left: 4px solid var(--red);
+    box-shadow: inset 10px 0px 17px -13px var(--red);
+  }
+}
+
+
+
+    .calendar {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    }
+
+    .calendar__header > div {
+    text-transform: uppercase;
+    font-size: 0.8em;
+    font-weight: bold;
+    }
+
+    .calendar__day {
+    border-right: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    cursor:pointer;
+    }
+    .calendar__day .active{
+        padding:5px;
+        background-color:#75abcd;
+        color:white;
+        text-decoration:none;
+    }
+
+.calendar__day:last-child {
+  border-right: 0;
+}
+
+.toggle{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+    text-align: center;
+    font-size: 0.9em;
+}
+.toggle__option{
+    padding: 16px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    text-transform: capitalize;
+    cursor: pointer;
+}
+    .toggle__option:first-child {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .toggle__option:last-child {
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+    .toggle__option--selected{
+        border-color: white;
+        background-color: white;
+        color: var(--red);
+        font-weight: 500;
+        box-shadow: 1px 2px 30px -5px var(--red);
+    }
+    .mes{
+        padding: 20px 25px;
+        width: 100%;
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 35px;
+    }
+    .mes .prev{
+        float: left;
+        padding-top:0px;
+        cursor:pointer;
+    }
+    .mes .next{
+        float:right;
+        padding-top:0px;
+        cursor:pointer;
+    }
+</style>
+
+  <div class="wrapper">
+  <main>
+    <div class="toolbar">
+      <div class="mes">
+          <dl>
+            <dt class="prev">&#10094;</dt>
+            <dt class="next">&#10095;</dt>
+            <dt>Dezembro 2018</dt>
+          </dl>
+        </div>
+    </div>
+      
+    <div class="calendar">
+      <div class="calendar__header">
+        <div>seg</div>
+        <div>ter</div>
+        <div>qua</div>
+        <div>qui</div>
+        <div>sex</div>
+        <div>sab</div>
+        <div>dom</div>
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day">25</div>
+        <div class="calendar__day day">26</div>
+        <div class="calendar__day day">27</div>
+        <div class="calendar__day day">28</div>
+        <div class="calendar__day day">29</div>
+        <div class="calendar__day day">30</div>
+        <div class="calendar__day day"><b>1</b></div>
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day"><b>2</b></div>
+        <div class="calendar__day day"><b>3</b></div>
+        <div class="calendar__day day"><b>4</b></div>
+        <div class="calendar__day day"><b>5</b></div>
+        <div class="calendar__day day"><b>6</b></div>
+        <div class="calendar__day day"><b>7</b></div>
+        <div class="calendar__day day"><b>8</b></div>        
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day"><b>9</b></div>
+        <div class="calendar__day day"><b>10</b></div>
+        <div class="calendar__day day"><b>11</b></div>
+        <div class="calendar__day day"><b>12</b></div>
+        <div class="calendar__day day"><a href="novafrase.html" class="active"><b>13</b></a></div>
+        <div class="calendar__day day"><b>14</b></div>
+        <div class="calendar__day day"><b>15</b></div>    
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day"><b>16</b></div>
+        <div class="calendar__day day"><b>17</b></div>
+        <div class="calendar__day day"><b>18</b></div>
+        <div class="calendar__day day"><b>19</b></div>
+        <div class="calendar__day day"><b>20</b></div> 
+        <div class="calendar__day day"><b>21</b></div> 
+        <div class="calendar__day day"><b>22</b></div> 
+      </div>
+      <div class="calendar__week">
+        <div class="calendar__day day"><b>23</b></div>
+        <div class="calendar__day day"><b>24</b></div>
+        <div class="calendar__day day"><b>25</b></div>
+        <div class="calendar__day day"><b>26</b></div>
+        <div class="calendar__day day"><b>27</b></div>
+        <div class="calendar__day day"><b>28</b></div>
+        <div class="calendar__day day"><b>29</b></div>
+      </div>
+     <div class="calendar__week">
+        <div class="calendar__day day"><b>30</b></div>
+        <div class="calendar__day day"><b>31</b></div>
+        <div class="calendar__day day">1</div>
+        <div class="calendar__day day">2</div>
+        <div class="calendar__day day">3</div>
+        <div class="calendar__day day">4</div>
+        <div class="calendar__day day">5</div>
+      </div>
+    </div>
+  </main>
+ 
+
+</div>
+        
+        
+
+</body>
+</html>

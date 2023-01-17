@@ -1,0 +1,12 @@
+.container > header {
+	color: #000;
+	font-family: 'Lato', Arial, sans-serif;
+	background: #FFF;
+    
+}
+
+.container > header h1{
+	font-size: 50px;
+    padding-right: 30%;
+    
+}
